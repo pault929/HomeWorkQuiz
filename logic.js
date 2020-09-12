@@ -18,10 +18,29 @@ var sfxWrong = new Audio("assets/sfx/incorrect.wav");
 
 function startQuiz() {
   // hide start screen
-
+  document.getElementById("start").innerHTML = "Hello World";
+}
   // un-hide questions section
 
   // start timer
+  function startTimer() {
+    setTime();
+  
+    // We only want to start the timer if totalSeconds is > 0
+    var timeleft = 25;
+
+var downloadTimer = setInterval(function function1(){
+  document.getElementById("countdown").innerHTML = timeleft + 
+"&nbsp"+"seconds remaining";
+
+  timeleft -= 1;
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Time is up!"
+  }
+}, 1000);
+
+    console.log(countdown);
 
   // show starting time
 
@@ -58,6 +77,17 @@ function quizEnd() {
   // show end screen
   // show final score
   // hide questions section
+/* This function stops the interval and also resets secondsElapsed
+   and calls "setTime()" which effectively reset the timer
+   to the input selections workMinutesInput.value and restMinutesInput.value */
+   function stopTimer() {
+    secondsElapsed = 0;
+    setTime();
+    renderTime();
+  }
+  
+
+
 }
 
 function clockTick() {
@@ -83,6 +113,6 @@ function checkForEnter(event) {
 submitBtn.onclick = saveHighscore;
 
 // user clicks button to start quiz
-startBtn.onclick = startQuiz;
+// startBtn.onclick = startQuiz;
 
 initialsEl.onkeyup = checkForEnter;
