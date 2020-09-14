@@ -21,7 +21,18 @@ function startQuiz() {
   document.getElementById("start").innerHTML = "Hello World";
 }
   // un-hide questions section
-
+  var score = 0;
+  
+  for (var i= 0; i < questions.length; i++){
+    var response = window.title(questions[i].prompt);
+    if(response == questions[i].answer){
+      score++;
+      alert("Correct");
+    }else{
+      alert ("Wrong!");
+    }
+   }
+   alert("you got " + score + "/" + questions.length);
   // start timer
   function startTimer() {
     setTime();
@@ -47,7 +58,30 @@ var downloadTimer = setInterval(function function1(){
   getQuestion();
 }
 
-function getQuestion() {
+function getQuestion(questions, quizContainer) {
+  var output = [];
+  var answers;
+
+  for(var i=0; i<questions.lengthh; i++){
+    answers =[];
+
+   for(letter in questions[i].answer){
+     answer.push(
+       '<label>'
+       + <input type="radio" name="question'+i+'" value="'+letter+'">'
+       + letter + ':'
+       + questions[i].answer[letter] +       
+       
+       '</label>'
+     );
+   } 
+  }
+
+  output.push(
+    'div class="question">' + question[i].question +'</div>'
+    + '<div class="answers">' + answers.join('') + '</div>'
+  );
+
   // get current question object from array
   // update title with current question
   // clear out any old question choices
@@ -56,6 +90,14 @@ function getQuestion() {
   // attach click event listener to each choice
   // display on the page
 }
+
+quizContainer.innerHtml = output.join('');
+}
+showQuestions(questions,quizContainer);
+
+
+
+
 
 function questionClick() {
   // check if user guessed wrong
@@ -113,6 +155,6 @@ function checkForEnter(event) {
 submitBtn.onclick = saveHighscore;
 
 // user clicks button to start quiz
-// startBtn.onclick = startQuiz;
+startBtn.onclick = startQuiz;
 
 initialsEl.onkeyup = checkForEnter;

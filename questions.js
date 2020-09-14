@@ -1,50 +1,40 @@
 // list of all questions, choices, and answers
-var questions = [
+var myQuestions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      question: "Commonly used data types DO NOT include:",
+      answers: {a:"strings", b:"booleans", c:"alerts", d:"numbers"},
+      correctAnswer: "c"
+    },
+    
+    {
+      question: "The condition in an if / else statement is enclosed within ____.",
+      answer: {a:"quotes", b:"curly brackets", c:"parentheses", d:"square brackets"},
+      correctAnswer: "c"
     },
     {
-      tittle: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      question: "Arrays in JavaScript can be used to store ____.",
+      answers: {
+        a: "numbers and strings",
+        b: "other arrays",
+        c: "booleans",
+        d: "all of the above"
+      },
+      correctAnswer: "d"
     },
     {
-      tittle: "Arrays in JavaScript can be used to store ____.",
-      choices: [
-        "numbers and strings",
-        "other arrays",
-        "booleans",
-        "all of the above"
-      ],
-      answer: "all of the above"
-    },
-    {
-      tittle:
+      question:
         "String values must be enclosed within ____ when being assigned to variables.",
-      choices: ["commas", "curly brackets", "quotes", "parentheses"],
-      answer: "quotes"
+      answer: {a:"commas", b:"curly brackets", c:"quotes", d:"parentheses"},
+      correctAnswer: "c"
     },
     {
       tittle:
         "A very useful tool used during development and debugging for printing content to the debugger is:",
       choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-      answer: "console.log"
+      answer: "d"
     }
   ];
   
-  var score = 0;
   
-  for (var i= 0; i < questions.length; i++){
-    var response = window.title(questions[i].prompt);
-    if(response == questions[i].answer){
-      score++;
-      alert("Correct");
-    }else{
-      alert ("Wrong!");
-    }
-   }
-   alert("you got " + score + "/" + questions.length);
   
   

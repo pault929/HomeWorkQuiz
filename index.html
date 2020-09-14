@@ -16,14 +16,17 @@
     <div class="wrapper">
       <div id="start-screen" class="start">
         <h1>Coding Quiz Challenge</h1>
-        <p>
+        <p id ="intro">
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
-        <button id="start">Start Quiz</button>
-      </div>
-
+        <!-- <button id="start">Start Quiz</button>
+      </div> -->
+      <button type="button" onclick="document.getElementById('intro').style.display='none'">Click Me!</button>
+      
+        
+      
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices"></div>
